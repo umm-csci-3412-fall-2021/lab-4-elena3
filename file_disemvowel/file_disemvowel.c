@@ -26,7 +26,15 @@ int copy_non_vowels(int num_chars, char* in_buf, char* out_buf) {
      * and this function should return the number of non-vowels that
      * that were copied over.
      */
-
+    int num = 0;
+    for (int i= 0; i < num_chars; ++i) {
+        char current = in_buf[i];
+        if(!is_vowel(current)){
+            out_buf[num] = current;
+            num++;
+        }
+    }
+    return num;
 }
 
 void disemvowel(FILE* inputFile, FILE* outputFile) {
